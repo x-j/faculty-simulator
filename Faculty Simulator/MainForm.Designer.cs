@@ -26,49 +26,116 @@ namespace Faculty_Simulator {
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Senior lect");
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("regular lect");
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("junior");
+            System.Windows.Forms.Label upgradesLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Senior lecturer",
+            "0"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Lecturer",
+            "0"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Junior Lecturer",
+            "0"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Senior Scientist",
+            "0"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Scientist",
+            "0"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Junior Scientist",
+            "0"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Senior Professor",
+            "0"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Professor",
+            "0"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Junior Professor",
+            "0"}, -1);
+            System.Windows.Forms.Label label3;
+            System.Windows.Forms.Label label10;
             this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.timerLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.grantsCounter = new System.Windows.Forms.ToolStripStatusLabel();
+            this.scienceCounter = new System.Windows.Forms.ToolStripStatusLabel();
             this.educationCounter = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.startGameButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.educationPage = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.educationListView = new System.Windows.Forms.ListView();
             this.unitHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.countHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.educationGroupBox = new System.Windows.Forms.GroupBox();
-            this.longLabelForEducationCostOfOneUpgrade = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.upgradeCountLabel = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.upgradeButtonsPanel = new System.Windows.Forms.Panel();
             this.upgrade3Button = new System.Windows.Forms.Button();
-            this.buy3Button = new System.Windows.Forms.Button();
             this.upgrade2Button = new System.Windows.Forms.Button();
             this.upgrade1Button = new System.Windows.Forms.Button();
-            this.buy2Button = new System.Windows.Forms.Button();
-            this.buy1Button = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.educationCostLabel = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.youObtainUnitsLabel = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.allUnitOfThisTypeProduceLabel = new System.Windows.Forms.Label();
+            this.upgradeCostLabel = new System.Windows.Forms.Label();
+            this.upgradesCountLabel = new System.Windows.Forms.Label();
+            this.buyButtonsPanel = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.costLabel = new System.Windows.Forms.Label();
+            this.youGainThisUnitLabel = new System.Windows.Forms.Label();
+            this.allUnitsOfThisTypeProduceLabel = new System.Windows.Forms.Label();
             this.thisUnitProducesLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.sciencePage = new System.Windows.Forms.TabPage();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.scienceListView = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.grantsPage = new System.Windows.Forms.TabPage();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.grantsListView = new System.Windows.Forms.ListView();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.cannotButton1 = new System.Windows.Forms.Button();
-            this.cannotButton2 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            upgradesLabel = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            label10 = new System.Windows.Forms.Label();
             this.statusStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -77,32 +144,97 @@ namespace Faculty_Simulator {
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.educationGroupBox.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.upgradeButtonsPanel.SuspendLayout();
+            this.buyButtonsPanel.SuspendLayout();
+            this.sciencePage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            this.grantsPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // upgradesLabel
+            // 
+            upgradesLabel.AutoSize = true;
+            upgradesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            upgradesLabel.Location = new System.Drawing.Point(6, 220);
+            upgradesLabel.Name = "upgradesLabel";
+            upgradesLabel.Size = new System.Drawing.Size(69, 15);
+            upgradesLabel.TabIndex = 4;
+            upgradesLabel.Tag = "4";
+            upgradesLabel.Text = "Upgrades";
             // 
             // statusStrip
             // 
+            this.statusStrip.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.timerLabel,
+            this.grantsCounter,
+            this.scienceCounter,
             this.educationCounter});
             this.statusStrip.Location = new System.Drawing.Point(0, 500);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(695, 22);
+            this.statusStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.statusStrip.Size = new System.Drawing.Size(801, 22);
+            this.statusStrip.SizingGrip = false;
             this.statusStrip.TabIndex = 0;
-            this.statusStrip.Text = "statusStrip1";
+            this.statusStrip.Text = "statusStrip";
+            // 
+            // timerLabel
+            // 
+            this.timerLabel.Margin = new System.Windows.Forms.Padding(0, 3, 400, 2);
+            this.timerLabel.Name = "timerLabel";
+            this.timerLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.timerLabel.Size = new System.Drawing.Size(48, 17);
+            this.timerLabel.Text = "0:00:00";
+            this.timerLabel.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.timerLabel.Visible = false;
+            // 
+            // grantsCounter
+            // 
+            this.grantsCounter.Name = "grantsCounter";
+            this.grantsCounter.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.grantsCounter.Size = new System.Drawing.Size(69, 17);
+            this.grantsCounter.Text = "GRANTS: 0";
+            this.grantsCounter.Visible = false;
+            // 
+            // scienceCounter
+            // 
+            this.scienceCounter.Name = "scienceCounter";
+            this.scienceCounter.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.scienceCounter.Size = new System.Drawing.Size(70, 17);
+            this.scienceCounter.Text = "SCIENCE: 0";
+            this.scienceCounter.Visible = false;
             // 
             // educationCounter
             // 
+            this.educationCounter.Margin = new System.Windows.Forms.Padding(0, 3, 5, 2);
             this.educationCounter.Name = "educationCounter";
-            this.educationCounter.Size = new System.Drawing.Size(82, 17);
-            this.educationCounter.Text = "0 EDUCATION";
+            this.educationCounter.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.educationCounter.Size = new System.Drawing.Size(89, 17);
+            this.educationCounter.Text = "EDUCATION: 0";
+            this.educationCounter.Visible = false;
             // 
             // toolStrip
             // 
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownButton});
+            this.toolStripDropDownButton,
+            this.toolStripDropDownButton1});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(695, 25);
+            this.toolStrip.Size = new System.Drawing.Size(801, 25);
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "toolStrip";
             // 
@@ -110,28 +242,77 @@ namespace Faculty_Simulator {
             // 
             this.toolStripDropDownButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.startGameButton});
+            this.startGameButton,
+            this.saveGameToolStripMenuItem,
+            this.loadGameToolStripMenuItem,
+            this.exitToolStripMenuItem});
             this.toolStripDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton.Name = "toolStripDropDownButton";
-            this.toolStripDropDownButton.Size = new System.Drawing.Size(81, 22);
-            this.toolStripDropDownButton.Text = "nice button";
+            this.toolStripDropDownButton.Size = new System.Drawing.Size(38, 22);
+            this.toolStripDropDownButton.Text = "File";
             // 
             // startGameButton
             // 
             this.startGameButton.Name = "startGameButton";
-            this.startGameButton.Size = new System.Drawing.Size(132, 22);
+            this.startGameButton.Size = new System.Drawing.Size(134, 22);
             this.startGameButton.Text = "Start Game";
             this.startGameButton.Click += new System.EventHandler(this.startGameButton_Click);
+            // 
+            // saveGameToolStripMenuItem
+            // 
+            this.saveGameToolStripMenuItem.Name = "saveGameToolStripMenuItem";
+            this.saveGameToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.saveGameToolStripMenuItem.Text = "Save Game";
+            // 
+            // loadGameToolStripMenuItem
+            // 
+            this.loadGameToolStripMenuItem.Name = "loadGameToolStripMenuItem";
+            this.loadGameToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.loadGameToolStripMenuItem.Text = "Load Game";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.optionToolStripMenuItem,
+            this.statisticsToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(48, 22);
+            this.toolStripDropDownButton1.Text = "More";
+            this.toolStripDropDownButton1.ToolTipText = "nice button";
+            // 
+            // optionToolStripMenuItem
+            // 
+            this.optionToolStripMenuItem.Name = "optionToolStripMenuItem";
+            this.optionToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.optionToolStripMenuItem.Text = "Options";
+            // 
+            // statisticsToolStripMenuItem
+            // 
+            this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
+            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.statisticsToolStripMenuItem.Text = "Statistics";
             // 
             // tabControl
             // 
             this.tabControl.Controls.Add(this.educationPage);
             this.tabControl.Controls.Add(this.sciencePage);
+            this.tabControl.Controls.Add(this.grantsPage);
             this.tabControl.Location = new System.Drawing.Point(10, 31);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(684, 469);
+            this.tabControl.Size = new System.Drawing.Size(779, 469);
             this.tabControl.TabIndex = 2;
+            this.tabControl.Tag = "0";
             // 
             // educationPage
             // 
@@ -140,7 +321,7 @@ namespace Faculty_Simulator {
             this.educationPage.Location = new System.Drawing.Point(4, 22);
             this.educationPage.Name = "educationPage";
             this.educationPage.Padding = new System.Windows.Forms.Padding(3);
-            this.educationPage.Size = new System.Drawing.Size(676, 443);
+            this.educationPage.Size = new System.Drawing.Size(771, 443);
             this.educationPage.TabIndex = 0;
             this.educationPage.Text = "EDUCATION";
             this.educationPage.UseVisualStyleBackColor = true;
@@ -157,9 +338,9 @@ namespace Faculty_Simulator {
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.educationGroupBox);
-            this.splitContainer1.Size = new System.Drawing.Size(670, 437);
-            this.splitContainer1.SplitterDistance = 223;
+            this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
+            this.splitContainer1.Size = new System.Drawing.Size(765, 437);
+            this.splitContainer1.SplitterDistance = 225;
             this.splitContainer1.TabIndex = 0;
             // 
             // educationListView
@@ -168,337 +349,651 @@ namespace Faculty_Simulator {
             this.educationListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.unitHeader,
             this.countHeader});
-            listViewItem4.Tag = "0";
-            listViewItem5.Tag = "1";
-            listViewItem6.Tag = "2";
+            listViewItem1.StateImageIndex = 0;
+            listViewItem1.Tag = "0";
+            listViewItem2.Tag = "1";
+            listViewItem3.Tag = "2";
             this.educationListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem4,
-            listViewItem5,
-            listViewItem6});
-            this.educationListView.Location = new System.Drawing.Point(3, 9);
+            listViewItem1,
+            listViewItem2,
+            listViewItem3});
+            this.educationListView.Location = new System.Drawing.Point(3, 3);
             this.educationListView.MultiSelect = false;
             this.educationListView.Name = "educationListView";
-            this.educationListView.Size = new System.Drawing.Size(212, 427);
+            this.educationListView.Size = new System.Drawing.Size(219, 433);
             this.educationListView.TabIndex = 0;
             this.educationListView.UseCompatibleStateImageBehavior = false;
             this.educationListView.View = System.Windows.Forms.View.Details;
-            this.educationListView.SelectedIndexChanged += new System.EventHandler(educationListView_SelectedIndexChanged);
+            this.educationListView.SelectedIndexChanged += new System.EventHandler(this.educationListView_SelectedIndexChanged);
             // 
             // unitHeader
             // 
             this.unitHeader.Tag = "0";
             this.unitHeader.Text = "Unit";
-            this.unitHeader.Width = 67;
+            this.unitHeader.Width = 104;
             // 
             // countHeader
             // 
             this.countHeader.Tag = "1";
             this.countHeader.Text = "Count";
-            this.countHeader.Width = 125;
+            this.countHeader.Width = 77;
             // 
-            // educationGroupBox
+            // groupBox1
             // 
-            this.educationGroupBox.Controls.Add(this.cannotButton2);
-            this.educationGroupBox.Controls.Add(this.cannotButton1);
-            this.educationGroupBox.Controls.Add(this.longLabelForEducationCostOfOneUpgrade);
-            this.educationGroupBox.Controls.Add(this.label18);
-            this.educationGroupBox.Controls.Add(this.upgradeCountLabel);
-            this.educationGroupBox.Controls.Add(this.label16);
-            this.educationGroupBox.Controls.Add(this.label15);
-            this.educationGroupBox.Controls.Add(this.upgrade3Button);
-            this.educationGroupBox.Controls.Add(this.buy3Button);
-            this.educationGroupBox.Controls.Add(this.upgrade2Button);
-            this.educationGroupBox.Controls.Add(this.upgrade1Button);
-            this.educationGroupBox.Controls.Add(this.buy2Button);
-            this.educationGroupBox.Controls.Add(this.buy1Button);
-            this.educationGroupBox.Controls.Add(this.label14);
-            this.educationGroupBox.Controls.Add(this.label13);
-            this.educationGroupBox.Controls.Add(this.label12);
-            this.educationGroupBox.Controls.Add(this.label11);
-            this.educationGroupBox.Controls.Add(this.label10);
-            this.educationGroupBox.Controls.Add(this.educationCostLabel);
-            this.educationGroupBox.Controls.Add(this.label8);
-            this.educationGroupBox.Controls.Add(this.youObtainUnitsLabel);
-            this.educationGroupBox.Controls.Add(this.label5);
-            this.educationGroupBox.Controls.Add(this.allUnitOfThisTypeProduceLabel);
-            this.educationGroupBox.Controls.Add(this.thisUnitProducesLabel);
-            this.educationGroupBox.Controls.Add(this.label2);
-            this.educationGroupBox.Controls.Add(this.label1);
-            this.educationGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.educationGroupBox.Location = new System.Drawing.Point(12, 11);
-            this.educationGroupBox.Name = "educationGroupBox";
-            this.educationGroupBox.Size = new System.Drawing.Size(419, 424);
-            this.educationGroupBox.TabIndex = 0;
-            this.educationGroupBox.TabStop = false;
-            this.educationGroupBox.Text = "whatever";
+            this.groupBox1.Controls.Add(this.upgradeButtonsPanel);
+            this.groupBox1.Controls.Add(this.upgradeCostLabel);
+            this.groupBox1.Controls.Add(this.upgradesCountLabel);
+            this.groupBox1.Controls.Add(upgradesLabel);
+            this.groupBox1.Controls.Add(this.buyButtonsPanel);
+            this.groupBox1.Controls.Add(this.costLabel);
+            this.groupBox1.Controls.Add(this.youGainThisUnitLabel);
+            this.groupBox1.Controls.Add(this.allUnitsOfThisTypeProduceLabel);
+            this.groupBox1.Controls.Add(this.thisUnitProducesLabel);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(530, 431);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
             // 
-            // longLabelForEducationCostOfOneUpgrade
+            // upgradeButtonsPanel
             // 
-            this.longLabelForEducationCostOfOneUpgrade.AutoSize = true;
-            this.longLabelForEducationCostOfOneUpgrade.Location = new System.Drawing.Point(126, 342);
-            this.longLabelForEducationCostOfOneUpgrade.Name = "longLabelForEducationCostOfOneUpgrade";
-            this.longLabelForEducationCostOfOneUpgrade.Size = new System.Drawing.Size(224, 13);
-            this.longLabelForEducationCostOfOneUpgrade.TabIndex = 17;
-            this.longLabelForEducationCostOfOneUpgrade.Text = "10000 EDUCATION, 0 SCIENCE, 0 GRANTS";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(14, 342);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(106, 13);
-            this.label18.TabIndex = 16;
-            this.label18.Text = "Cost of one upgrade:";
-            // 
-            // upgradeCountLabel
-            // 
-            this.upgradeCountLabel.AutoSize = true;
-            this.upgradeCountLabel.Location = new System.Drawing.Point(107, 318);
-            this.upgradeCountLabel.Name = "upgradeCountLabel";
-            this.upgradeCountLabel.Size = new System.Drawing.Size(13, 13);
-            this.upgradeCountLabel.TabIndex = 15;
-            this.upgradeCountLabel.Text = "0";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(14, 318);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(89, 13);
-            this.label16.TabIndex = 14;
-            this.label16.Text = "Upgrades count: ";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label15.Location = new System.Drawing.Point(13, 289);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(61, 13);
-            this.label15.TabIndex = 13;
-            this.label15.Text = "Upgrades";
+            this.upgradeButtonsPanel.Controls.Add(this.upgrade3Button);
+            this.upgradeButtonsPanel.Controls.Add(this.upgrade2Button);
+            this.upgradeButtonsPanel.Controls.Add(this.upgrade1Button);
+            this.upgradeButtonsPanel.Location = new System.Drawing.Point(9, 327);
+            this.upgradeButtonsPanel.Name = "upgradeButtonsPanel";
+            this.upgradeButtonsPanel.Size = new System.Drawing.Size(515, 31);
+            this.upgradeButtonsPanel.TabIndex = 5;
             // 
             // upgrade3Button
             // 
-            this.upgrade3Button.Location = new System.Drawing.Point(217, 372);
+            this.upgrade3Button.Location = new System.Drawing.Point(262, 0);
             this.upgrade3Button.Name = "upgrade3Button";
-            this.upgrade3Button.Size = new System.Drawing.Size(168, 33);
-            this.upgrade3Button.TabIndex = 12;
-            this.upgrade3Button.Text = "Upgrade 0";
-            this.upgrade3Button.UseVisualStyleBackColor = true;
-            // 
-            // buy3Button
-            // 
-            this.buy3Button.Location = new System.Drawing.Point(217, 206);
-            this.buy3Button.Name = "buy3Button";
-            this.buy3Button.Size = new System.Drawing.Size(168, 33);
-            this.buy3Button.TabIndex = 12;
-            this.buy3Button.Tag = "2";
-            this.buy3Button.Text = "Buy 0";
-            this.buy3Button.UseVisualStyleBackColor = true;
-            this.buy3Button.Click += new System.EventHandler(this.buy3Button_Click);
+            this.upgrade3Button.Size = new System.Drawing.Size(170, 31);
+            this.upgrade3Button.TabIndex = 0;
+            this.upgrade3Button.Text = "Upgrade 1";
+            this.upgrade3Button.UseVisualStyleBackColor = false;
             // 
             // upgrade2Button
             // 
-            this.upgrade2Button.Location = new System.Drawing.Point(101, 372);
+            this.upgrade2Button.Location = new System.Drawing.Point(116, 0);
             this.upgrade2Button.Name = "upgrade2Button";
-            this.upgrade2Button.Size = new System.Drawing.Size(110, 33);
-            this.upgrade2Button.TabIndex = 12;
-            this.upgrade2Button.Text = "Upgrade 0";
-            this.upgrade2Button.UseVisualStyleBackColor = true;
+            this.upgrade2Button.Size = new System.Drawing.Size(140, 31);
+            this.upgrade2Button.TabIndex = 0;
+            this.upgrade2Button.Text = "Upgrade 1";
+            this.upgrade2Button.UseVisualStyleBackColor = false;
             // 
             // upgrade1Button
             // 
-            this.upgrade1Button.Location = new System.Drawing.Point(16, 372);
+            this.upgrade1Button.Location = new System.Drawing.Point(0, 0);
             this.upgrade1Button.Name = "upgrade1Button";
-            this.upgrade1Button.Size = new System.Drawing.Size(76, 33);
-            this.upgrade1Button.TabIndex = 12;
-            this.upgrade1Button.Text = "Upgrade 0";
-            this.upgrade1Button.UseVisualStyleBackColor = true;
+            this.upgrade1Button.Size = new System.Drawing.Size(110, 31);
+            this.upgrade1Button.TabIndex = 0;
+            this.upgrade1Button.Text = "Upgrade 1";
+            this.upgrade1Button.UseVisualStyleBackColor = false;
             // 
-            // buy2Button
+            // upgradeCostLabel
             // 
-            this.buy2Button.Location = new System.Drawing.Point(101, 206);
-            this.buy2Button.Name = "buy2Button";
-            this.buy2Button.Size = new System.Drawing.Size(110, 33);
-            this.buy2Button.TabIndex = 12;
-            this.buy2Button.Tag = "1";
-            this.buy2Button.Text = "Buy 0";
-            this.buy2Button.UseVisualStyleBackColor = true;
-            this.buy2Button.Click += new System.EventHandler(this.buy2Button_Click);
+            this.upgradeCostLabel.AutoSize = true;
+            this.upgradeCostLabel.Location = new System.Drawing.Point(6, 297);
+            this.upgradeCostLabel.Name = "upgradeCostLabel";
+            this.upgradeCostLabel.Size = new System.Drawing.Size(330, 15);
+            this.upgradeCostLabel.TabIndex = 2;
+            this.upgradeCostLabel.Tag = "6";
+            this.upgradeCostLabel.Text = "Cost of an upgrade: Education: 10000, Science: 0, Grants: 0";
             // 
-            // buy1Button
+            // upgradesCountLabel
             // 
-            this.buy1Button.Location = new System.Drawing.Point(16, 206);
-            this.buy1Button.Name = "buy1Button";
-            this.buy1Button.Size = new System.Drawing.Size(76, 33);
-            this.buy1Button.TabIndex = 12;
-            this.buy1Button.Tag = "0";
-            this.buy1Button.Text = "Buy 1";
-            this.buy1Button.UseVisualStyleBackColor = true;
-            this.buy1Button.Click += new System.EventHandler(this.buy1Button_Click);
+            this.upgradesCountLabel.AutoSize = true;
+            this.upgradesCountLabel.Location = new System.Drawing.Point(6, 261);
+            this.upgradesCountLabel.Name = "upgradesCountLabel";
+            this.upgradesCountLabel.Size = new System.Drawing.Size(174, 15);
+            this.upgradesCountLabel.TabIndex = 3;
+            this.upgradesCountLabel.Tag = "5";
+            this.upgradesCountLabel.Text = "You currently have 0 upgrades.";
             // 
-            // label14
+            // buyButtonsPanel
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(210, 180);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(52, 13);
-            this.label14.TabIndex = 11;
-            this.label14.Text = "GRANTS";
+            this.buyButtonsPanel.Controls.Add(this.button3);
+            this.buyButtonsPanel.Controls.Add(this.button2);
+            this.buyButtonsPanel.Controls.Add(this.button1);
+            this.buyButtonsPanel.Location = new System.Drawing.Point(9, 148);
+            this.buyButtonsPanel.Name = "buyButtonsPanel";
+            this.buyButtonsPanel.Size = new System.Drawing.Size(515, 31);
+            this.buyButtonsPanel.TabIndex = 1;
             // 
-            // label13
+            // button3
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(209, 155);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 13);
-            this.label13.TabIndex = 11;
-            this.label13.Text = "SCIENCE";
+            this.button3.Location = new System.Drawing.Point(262, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(170, 31);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "Buy1";
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // label12
+            // button2
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(209, 130);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(70, 13);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "EDUCATION";
+            this.button2.Location = new System.Drawing.Point(116, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(140, 31);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Buy1";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // button1
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(180, 180);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(13, 13);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "0";
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(110, 31);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Buy1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // label10
+            // costLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(180, 155);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(13, 13);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "0";
+            this.costLabel.AutoSize = true;
+            this.costLabel.Location = new System.Drawing.Point(6, 118);
+            this.costLabel.Name = "costLabel";
+            this.costLabel.Size = new System.Drawing.Size(304, 15);
+            this.costLabel.TabIndex = 0;
+            this.costLabel.Tag = "3";
+            this.costLabel.Text = "Cost of one unit: Education: 1000, Science: 0, Grants: 0";
             // 
-            // educationCostLabel
+            // youGainThisUnitLabel
             // 
-            this.educationCostLabel.AutoSize = true;
-            this.educationCostLabel.Location = new System.Drawing.Point(180, 130);
-            this.educationCostLabel.Name = "educationCostLabel";
-            this.educationCostLabel.Size = new System.Drawing.Size(31, 13);
-            this.educationCostLabel.TabIndex = 8;
-            this.educationCostLabel.Text = "1000";
+            this.youGainThisUnitLabel.AutoSize = true;
+            this.youGainThisUnitLabel.Location = new System.Drawing.Point(6, 76);
+            this.youGainThisUnitLabel.Name = "youGainThisUnitLabel";
+            this.youGainThisUnitLabel.Size = new System.Drawing.Size(231, 15);
+            this.youGainThisUnitLabel.TabIndex = 0;
+            this.youGainThisUnitLabel.Tag = "2";
+            this.youGainThisUnitLabel.Text = "You gain 0 units of this type every second.";
             // 
-            // label8
+            // allUnitsOfThisTypeProduceLabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 130);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(172, 13);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "The cost of one unit of this type is: ";
-            // 
-            // youObtainUnitsLabel
-            // 
-            this.youObtainUnitsLabel.AutoSize = true;
-            this.youObtainUnitsLabel.Location = new System.Drawing.Point(70, 85);
-            this.youObtainUnitsLabel.Name = "youObtainUnitsLabel";
-            this.youObtainUnitsLabel.Size = new System.Drawing.Size(159, 13);
-            this.youObtainUnitsLabel.TabIndex = 5;
-            this.youObtainUnitsLabel.Text = "0 units of this type every second";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 85);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "You obtain ";
-            // 
-            // allUnitOfThisTypeProduceLabel
-            // 
-            this.allUnitOfThisTypeProduceLabel.AutoSize = true;
-            this.allUnitOfThisTypeProduceLabel.Location = new System.Drawing.Point(163, 49);
-            this.allUnitOfThisTypeProduceLabel.Name = "allUnitOfThisTypeProduceLabel";
-            this.allUnitOfThisTypeProduceLabel.Size = new System.Drawing.Size(13, 13);
-            this.allUnitOfThisTypeProduceLabel.TabIndex = 3;
-            this.allUnitOfThisTypeProduceLabel.Text = "0";
+            this.allUnitsOfThisTypeProduceLabel.AutoSize = true;
+            this.allUnitsOfThisTypeProduceLabel.Location = new System.Drawing.Point(6, 41);
+            this.allUnitsOfThisTypeProduceLabel.Name = "allUnitsOfThisTypeProduceLabel";
+            this.allUnitsOfThisTypeProduceLabel.Size = new System.Drawing.Size(298, 15);
+            this.allUnitsOfThisTypeProduceLabel.TabIndex = 0;
+            this.allUnitsOfThisTypeProduceLabel.Tag = "1";
+            this.allUnitsOfThisTypeProduceLabel.Text = "All units of this type produce: 0 Lecturers every second";
             // 
             // thisUnitProducesLabel
             // 
             this.thisUnitProducesLabel.AutoSize = true;
-            this.thisUnitProducesLabel.Location = new System.Drawing.Point(118, 25);
+            this.thisUnitProducesLabel.Location = new System.Drawing.Point(6, 17);
             this.thisUnitProducesLabel.Name = "thisUnitProducesLabel";
-            this.thisUnitProducesLabel.Size = new System.Drawing.Size(13, 13);
-            this.thisUnitProducesLabel.TabIndex = 2;
-            this.thisUnitProducesLabel.Text = "0";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "All units of this type produce: ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "This unit produces: ";
+            this.thisUnitProducesLabel.Size = new System.Drawing.Size(269, 15);
+            this.thisUnitProducesLabel.TabIndex = 0;
+            this.thisUnitProducesLabel.Tag = "0";
+            this.thisUnitProducesLabel.Text = "This unit xxx produces: 2 Lecturers every second";
             // 
             // sciencePage
             // 
+            this.sciencePage.Controls.Add(this.splitContainer2);
             this.sciencePage.Location = new System.Drawing.Point(4, 22);
             this.sciencePage.Name = "sciencePage";
             this.sciencePage.Padding = new System.Windows.Forms.Padding(3);
-            this.sciencePage.Size = new System.Drawing.Size(676, 443);
+            this.sciencePage.Size = new System.Drawing.Size(771, 443);
             this.sciencePage.TabIndex = 1;
             this.sciencePage.Text = "SCIENCE";
             this.sciencePage.UseVisualStyleBackColor = true;
             // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.scienceListView);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.groupBox2);
+            this.splitContainer2.Size = new System.Drawing.Size(765, 437);
+            this.splitContainer2.SplitterDistance = 225;
+            this.splitContainer2.TabIndex = 1;
+            // 
+            // scienceListView
+            // 
+            this.scienceListView.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.scienceListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            listViewItem4.Tag = "0";
+            listViewItem5.Tag = "1";
+            listViewItem6.Tag = "2";
+            this.scienceListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem4,
+            listViewItem5,
+            listViewItem6});
+            this.scienceListView.Location = new System.Drawing.Point(3, 3);
+            this.scienceListView.MultiSelect = false;
+            this.scienceListView.Name = "scienceListView";
+            this.scienceListView.Size = new System.Drawing.Size(219, 433);
+            this.scienceListView.TabIndex = 0;
+            this.scienceListView.UseCompatibleStateImageBehavior = false;
+            this.scienceListView.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Tag = "0";
+            this.columnHeader1.Text = "Unit";
+            this.columnHeader1.Width = 104;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Tag = "1";
+            this.columnHeader2.Text = "Count";
+            this.columnHeader2.Width = 77;
+            // 
+            // grantsPage
+            // 
+            this.grantsPage.Controls.Add(this.splitContainer3);
+            this.grantsPage.Location = new System.Drawing.Point(4, 22);
+            this.grantsPage.Name = "grantsPage";
+            this.grantsPage.Padding = new System.Windows.Forms.Padding(3);
+            this.grantsPage.Size = new System.Drawing.Size(771, 443);
+            this.grantsPage.TabIndex = 2;
+            this.grantsPage.Text = "GRANTS";
+            this.grantsPage.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer3.Name = "splitContainer3";
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.grantsListView);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.groupBox3);
+            this.splitContainer3.Size = new System.Drawing.Size(765, 437);
+            this.splitContainer3.SplitterDistance = 225;
+            this.splitContainer3.TabIndex = 1;
+            // 
+            // grantsListView
+            // 
+            this.grantsListView.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.grantsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3,
+            this.columnHeader4});
+            listViewItem7.Tag = "0";
+            listViewItem8.Tag = "1";
+            listViewItem9.Tag = "2";
+            this.grantsListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem7,
+            listViewItem8,
+            listViewItem9});
+            this.grantsListView.Location = new System.Drawing.Point(3, 3);
+            this.grantsListView.MultiSelect = false;
+            this.grantsListView.Name = "grantsListView";
+            this.grantsListView.Size = new System.Drawing.Size(219, 433);
+            this.grantsListView.TabIndex = 0;
+            this.grantsListView.UseCompatibleStateImageBehavior = false;
+            this.grantsListView.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Tag = "0";
+            this.columnHeader3.Text = "Unit";
+            this.columnHeader3.Width = 104;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Tag = "1";
+            this.columnHeader4.Text = "Count";
+            this.columnHeader4.Width = 77;
+            // 
             // timer
             // 
+            this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // cannotButton1
+            // groupBox2
             // 
-            this.cannotButton1.Enabled = false;
-            this.cannotButton1.Location = new System.Drawing.Point(16, 206);
-            this.cannotButton1.Name = "cannotButton1";
-            this.cannotButton1.Size = new System.Drawing.Size(195, 33);
-            this.cannotButton1.TabIndex = 18;
-            this.cannotButton1.Text = "Cannot Buy";
-            this.cannotButton1.UseVisualStyleBackColor = true;
-            this.cannotButton1.Visible = false;
+            this.groupBox2.Controls.Add(this.panel1);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(label3);
+            this.groupBox2.Controls.Add(this.panel2);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBox2.Location = new System.Drawing.Point(3, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(530, 431);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
             // 
-            // cannotButton2
+            // panel1
             // 
-            this.cannotButton2.Enabled = false;
-            this.cannotButton2.Location = new System.Drawing.Point(17, 372);
-            this.cannotButton2.Name = "cannotButton2";
-            this.cannotButton2.Size = new System.Drawing.Size(195, 33);
-            this.cannotButton2.TabIndex = 18;
-            this.cannotButton2.Text = "Cannot Upgrade";
-            this.cannotButton2.UseVisualStyleBackColor = true;
-            this.cannotButton2.Visible = false;
+            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.button6);
+            this.panel1.Location = new System.Drawing.Point(9, 327);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(515, 31);
+            this.panel1.TabIndex = 5;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(262, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(170, 31);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "Upgrade 1";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(116, 0);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(140, 31);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "Upgrade 1";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(0, 0);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(110, 31);
+            this.button6.TabIndex = 0;
+            this.button6.Text = "Upgrade 1";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 297);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(330, 15);
+            this.label1.TabIndex = 2;
+            this.label1.Tag = "6";
+            this.label1.Text = "Cost of an upgrade: Education: 10000, Science: 0, Grants: 0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 261);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(174, 15);
+            this.label2.TabIndex = 3;
+            this.label2.Tag = "5";
+            this.label2.Text = "You currently have 0 upgrades.";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            label3.Location = new System.Drawing.Point(6, 220);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(69, 15);
+            label3.TabIndex = 4;
+            label3.Tag = "4";
+            label3.Text = "Upgrades";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.button7);
+            this.panel2.Controls.Add(this.button8);
+            this.panel2.Controls.Add(this.button9);
+            this.panel2.Location = new System.Drawing.Point(9, 148);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(515, 31);
+            this.panel2.TabIndex = 1;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(262, 0);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(170, 31);
+            this.button7.TabIndex = 0;
+            this.button7.Text = "Buy1";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(116, 0);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(140, 31);
+            this.button8.TabIndex = 0;
+            this.button8.Text = "Buy1";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(0, 0);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(110, 31);
+            this.button9.TabIndex = 0;
+            this.button9.Text = "Buy1";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 118);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(304, 15);
+            this.label4.TabIndex = 0;
+            this.label4.Tag = "3";
+            this.label4.Text = "Cost of one unit: Education: 1000, Science: 0, Grants: 0";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 76);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(231, 15);
+            this.label5.TabIndex = 0;
+            this.label5.Tag = "2";
+            this.label5.Text = "You gain 0 units of this type every second.";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 41);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(298, 15);
+            this.label6.TabIndex = 0;
+            this.label6.Tag = "1";
+            this.label6.Text = "All units of this type produce: 0 Lecturers every second";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 17);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(269, 15);
+            this.label7.TabIndex = 0;
+            this.label7.Tag = "0";
+            this.label7.Text = "This unit xxx produces: 2 Lecturers every second";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.panel3);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(label10);
+            this.groupBox3.Controls.Add(this.panel4);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBox3.Location = new System.Drawing.Point(3, 3);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(530, 431);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.button10);
+            this.panel3.Controls.Add(this.button11);
+            this.panel3.Controls.Add(this.button12);
+            this.panel3.Location = new System.Drawing.Point(9, 327);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(515, 31);
+            this.panel3.TabIndex = 5;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(262, 0);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(170, 31);
+            this.button10.TabIndex = 0;
+            this.button10.Text = "Upgrade 1";
+            this.button10.UseVisualStyleBackColor = false;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(116, 0);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(140, 31);
+            this.button11.TabIndex = 0;
+            this.button11.Text = "Upgrade 1";
+            this.button11.UseVisualStyleBackColor = false;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(0, 0);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(110, 31);
+            this.button12.TabIndex = 0;
+            this.button12.Text = "Upgrade 1";
+            this.button12.UseVisualStyleBackColor = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 297);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(330, 15);
+            this.label8.TabIndex = 2;
+            this.label8.Tag = "6";
+            this.label8.Text = "Cost of an upgrade: Education: 10000, Science: 0, Grants: 0";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 261);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(174, 15);
+            this.label9.TabIndex = 3;
+            this.label9.Tag = "5";
+            this.label9.Text = "You currently have 0 upgrades.";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            label10.Location = new System.Drawing.Point(6, 220);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(69, 15);
+            label10.TabIndex = 4;
+            label10.Tag = "4";
+            label10.Text = "Upgrades";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.button13);
+            this.panel4.Controls.Add(this.button14);
+            this.panel4.Controls.Add(this.button15);
+            this.panel4.Location = new System.Drawing.Point(9, 148);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(515, 31);
+            this.panel4.TabIndex = 1;
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(262, 0);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(170, 31);
+            this.button13.TabIndex = 0;
+            this.button13.Text = "Buy1";
+            this.button13.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(116, 0);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(140, 31);
+            this.button14.TabIndex = 0;
+            this.button14.Text = "Buy1";
+            this.button14.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(0, 0);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(110, 31);
+            this.button15.TabIndex = 0;
+            this.button15.Text = "Buy1";
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 118);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(304, 15);
+            this.label11.TabIndex = 0;
+            this.label11.Tag = "3";
+            this.label11.Text = "Cost of one unit: Education: 1000, Science: 0, Grants: 0";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 76);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(231, 15);
+            this.label12.TabIndex = 0;
+            this.label12.Tag = "2";
+            this.label12.Text = "You gain 0 units of this type every second.";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 41);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(298, 15);
+            this.label13.TabIndex = 0;
+            this.label13.Tag = "1";
+            this.label13.Text = "All units of this type produce: 0 Lecturers every second";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 17);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(269, 15);
+            this.label14.TabIndex = 0;
+            this.label14.Tag = "0";
+            this.label14.Text = "This unit xxx produces: 2 Lecturers every second";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 522);
+            this.ClientSize = new System.Drawing.Size(801, 522);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.statusStrip);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainForm";
             this.Text = "This is exactly how life at MiNI looks like";
             this.statusStrip.ResumeLayout(false);
@@ -511,14 +1006,35 @@ namespace Faculty_Simulator {
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.educationGroupBox.ResumeLayout(false);
-            this.educationGroupBox.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.upgradeButtonsPanel.ResumeLayout(false);
+            this.buyButtonsPanel.ResumeLayout(false);
+            this.sciencePage.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.grantsPage.ResumeLayout(false);
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
-        
+      
+
         #endregion
 
         private System.Windows.Forms.StatusStrip statusStrip;
@@ -534,33 +1050,69 @@ namespace Faculty_Simulator {
         private System.Windows.Forms.ColumnHeader unitHeader;
         private System.Windows.Forms.ColumnHeader countHeader;
         private System.Windows.Forms.Timer timer;
-        private System.Windows.Forms.GroupBox educationGroupBox;
-        private System.Windows.Forms.Button buy3Button;
-        private System.Windows.Forms.Button buy2Button;
-        private System.Windows.Forms.Button buy1Button;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label educationCostLabel;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label youObtainUnitsLabel;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label allUnitOfThisTypeProduceLabel;
+        private System.Windows.Forms.TabPage grantsPage;
+        private System.Windows.Forms.ToolStripMenuItem saveGameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadGameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripStatusLabel timerLabel;
+        private System.Windows.Forms.ToolStripStatusLabel grantsCounter;
+        private System.Windows.Forms.ToolStripStatusLabel scienceCounter;
+        private System.Windows.Forms.ToolStripMenuItem optionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem statisticsToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label costLabel;
+        private System.Windows.Forms.Label youGainThisUnitLabel;
+        private System.Windows.Forms.Label allUnitsOfThisTypeProduceLabel;
         private System.Windows.Forms.Label thisUnitProducesLabel;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label longLabelForEducationCostOfOneUpgrade;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label upgradeCountLabel;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel buyButtonsPanel;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.ListView scienceListView;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.SplitContainer splitContainer3;
+        private System.Windows.Forms.ListView grantsListView;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Panel upgradeButtonsPanel;
         private System.Windows.Forms.Button upgrade3Button;
         private System.Windows.Forms.Button upgrade2Button;
         private System.Windows.Forms.Button upgrade1Button;
-        private System.Windows.Forms.Button cannotButton2;
-        private System.Windows.Forms.Button cannotButton1;
+        private System.Windows.Forms.Label upgradeCostLabel;
+        private System.Windows.Forms.Label upgradesCountLabel;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
     }
 }
 
