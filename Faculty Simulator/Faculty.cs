@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,42 +9,42 @@ namespace Faculty_Simulator {
 
     class Faculty {
 
-        private const long STARTING_EDUCATION = 10;
+        private static BigInteger STARTING_EDUCATION = 50;
 
         public string Name { get; set; }
-        public long totalEducation;
-        public long totalScience;
-        public long totalGrants;
+        public BigInteger totalEducation;
+        public BigInteger totalScience;
+        public BigInteger totalGrants;
 
         public int[] production = { 2, 2, 1 };
 
-        public List<List<long[]>> allWorkers;
+        public List<List<BigInteger[]>> allWorkers;
 
         //education bar info: 
         //first element in the arrays is count, the second is number of upgrades.
-        public List<long[]> educationWorkers;
-        public long[] seniorLectInfo = { 0, 0 };
-        public long[] regularLectsInfo = { 0, 0 };
-        public long[] juniorLectsInfo = { 0, 0 };
+        public List<BigInteger[]> educationWorkers;
+        public BigInteger[] seniorLectInfo = { 0, 0 };
+        public BigInteger[] regularLectsInfo = { 0, 0 };
+        public BigInteger[] juniorLectsInfo = { 0, 0 };
 
         //science bar info: 
-        public List<long[]> scienceWorkers;
-        public long[] seniorSciInfo = { 0, 0 };
-        public long[] regularSciInfo = { 0, 0 };
-        public long[] juniorSciInfo = { 0, 0 };
+        public List<BigInteger[]> scienceWorkers;
+        public BigInteger[] seniorSciInfo = { 0, 0 };
+        public BigInteger[] regularSciInfo = { 0, 0 };
+        public BigInteger[] juniorSciInfo = { 0, 0 };
 
         //grants bar info: 
-        public List<long[]> grantWorkers;
-        public long[] seniorProfInfo = { 0, 0 };
-        public long[] regularProfInfo = { 0, 0 };
-        public long[] juniorProfInfo = { 0, 0 };
+        public List<BigInteger[]> grantWorkers;
+        public BigInteger[] seniorProfInfo = { 0, 0 };
+        public BigInteger[] regularProfInfo = { 0, 0 };
+        public BigInteger[] juniorProfInfo = { 0, 0 };
 
         public class Cost {
-            public long educations;
-            public long sciences;
-            public long grants;
+            public BigInteger educations;
+            public BigInteger sciences;
+            public BigInteger grants;
 
-            public Cost(long e, long s, long g) {
+            public Cost(BigInteger e, BigInteger s, BigInteger g) {
                 educations = e;
                 sciences = s;
                 grants = g;
@@ -66,43 +67,13 @@ namespace Faculty_Simulator {
         }
 
         public List<Cost[]> allCosts;
-        public Cost[] eduCosts = { new Cost(1000, 0, 0), new Cost(100, 0, 0), new Cost(10, 0, 0) };
-        public Cost[] sciCosts = { new Cost(1000, 40, 0), new Cost(200, 20, 0), new Cost(100, 0, 0) };
-        public Cost[] graCosts = { new Cost(2000, 500, 100), new Cost(400, 200, 10), new Cost(200, 100, 0) };
 
         //upgrade costs are the same everywhere, fortunately:
-        public long[] upgradeCosts = { 10000, 1000, 100 };
+        public BigInteger[] upgradeCosts = { 10000, 1000, 100 };
 
         public Faculty(string v) {
             Name = v;
-            totalEducation = STARTING_EDUCATION;
-            totalScience = 0;
-            totalGrants = 0;
-            educationWorkers = new List<long[]>();
-            educationWorkers.Add(seniorLectInfo);
-            educationWorkers.Add(regularLectsInfo);
-            educationWorkers.Add(juniorLectsInfo);
-
-            scienceWorkers = new List<long[]>();
-            scienceWorkers.Add(seniorSciInfo);
-            scienceWorkers.Add(regularSciInfo);
-            scienceWorkers.Add(juniorSciInfo);
-
-            grantWorkers = new List<long[]>();
-            grantWorkers.Add(seniorProfInfo);
-            grantWorkers.Add(regularProfInfo);
-            grantWorkers.Add(juniorProfInfo);
-
-            allWorkers = new List<List<long[]>>();
-            allWorkers.Add(educationWorkers);
-            allWorkers.Add(scienceWorkers);
-            allWorkers.Add(grantWorkers);
-
-            allCosts = new List<Cost[]>();
-            allCosts.Add(eduCosts);
-            allCosts.Add(sciCosts);
-            allCosts.Add(graCosts);
-
+            PrepareForWork();
         }
 
         public void Increment() {
@@ -118,9 +89,9 @@ namespace Faculty_Simulator {
             juniorProfInfo[0] += regularProfInfo[0] * production[1] * (regularProfInfo[1] + 1);
 
             //gather the edu, sci and gra:
-            totalEducation += juniorLectsInfo[0] * (juniorLectsInfo[1] + 1);
-            totalScience += juniorSciInfo[0] * (juniorSciInfo[1] + 1);
-            totalGrants += juniorProfInfo[0] * (juniorProfInfo[1] + 1);
+            totalEducation += juniorLectsInfo[0] * production[2] * (juniorLectsInfo[1] + 1);
+            totalScience += juniorSciInfo[0] * production[2] * (juniorSciInfo[1] + 1);
+            totalGrants += juniorProfInfo[0] * production[2] * (juniorProfInfo[1] + 1);
 
         }
         public bool CanAfford(Cost cost) {
@@ -131,25 +102,25 @@ namespace Faculty_Simulator {
         }
 
         //this method below should only be called when we want to compare the cost of education alone
-        public bool CanAfford(long educationCost) {
+        public bool CanAfford(BigInteger educationCost) {
             return totalEducation >= educationCost;
         }
 
         //we basically divide our total resources by cost of one unit and get something
-        public long GetAffordableWorkers(int selectedTab, int selectedItem) {
+        public BigInteger GetAffordableWorkers(int selectedTab, int selectedItem) {
             Cost cost = allCosts[selectedTab][selectedItem];
-            long maxEdu = totalEducation / cost.educations;
+            BigInteger maxEdu = totalEducation / cost.educations;
             if (cost.sciences != 0) {
-                long maxSci = totalScience / cost.sciences;
+                BigInteger maxSci = totalScience / cost.sciences;
                 if (cost.grants != 0) {
-                    long maxGra = totalGrants / cost.grants;
-                    return Math.Min(maxEdu, Math.Min(maxSci, maxGra));
+                    BigInteger maxGra = totalGrants / cost.grants;
+                    return BigInteger.Min(maxEdu, BigInteger.Min(maxSci, maxGra));
                 } else
-                    return Math.Min(maxEdu, maxSci);
+                    return BigInteger.Min(maxEdu, maxSci);
             } else
                 return maxEdu;
         }
-        public long GetAffordableUpgrades(int selectedItem) {
+        public BigInteger GetAffordableUpgrades(int selectedItem) {
             //assume upgrades only cost education:
             return (totalEducation / upgradeCosts[selectedItem]);
         }
@@ -157,7 +128,7 @@ namespace Faculty_Simulator {
         //Buy method returns true if we broke the game:
         public bool Buy(int selectedTab, int selectedItem, string buttonTag) {
             Cost cost = allCosts[selectedTab][selectedItem];
-            long howManyUnits = 1;
+            BigInteger howManyUnits = 1;
             if (buttonTag == "1") howManyUnits = GetAffordableWorkers(selectedTab, selectedItem) / 2;
             if (buttonTag == "2") howManyUnits = GetAffordableWorkers(selectedTab, selectedItem);
 
@@ -173,8 +144,8 @@ namespace Faculty_Simulator {
 
         //Upgrade method also returns true if game broken
         public bool Upgrade(int selectedTab, int selectedItem, string buttonTag) {
-            long eduCost = upgradeCosts[selectedItem];
-            long howManyUpgrades = 1;
+            BigInteger eduCost = upgradeCosts[selectedItem];
+            BigInteger howManyUpgrades = 1;
             if (buttonTag == "1") howManyUpgrades = GetAffordableUpgrades(selectedItem) / 2;
             if (buttonTag == "2") howManyUpgrades = GetAffordableUpgrades(selectedItem);
 
@@ -188,10 +159,70 @@ namespace Faculty_Simulator {
         }
 
         //checks if the amount of knowledge ammassed within the faculty became too big:
+        //but now that i think about it, it probably will never return true
         public bool Exploded() {
             if (totalEducation < 0 || totalScience < 0 || totalGrants < 0) return true;
             else return false;
 
+        }
+
+        public void UpdateProduction(int newProductionMultiplier) {
+
+            for (int i = 0; i < production.Length; i++)
+                production[i] *= newProductionMultiplier;
+
+        }
+
+        public void UpdatePrices(int newPricesMultiplier) {
+
+            for (int i = 0; i < allCosts.Count; i++) {
+                for (int j = 0; j < allCosts[i].Length; j++) {
+                    allCosts[i][j] = Cost.Multiply(newPricesMultiplier, allCosts[i][j]);
+                }
+            }
+
+        }
+
+        public void PrepareForWork() {
+            totalEducation = STARTING_EDUCATION;
+            totalScience = 0;
+            totalGrants = 0;
+            educationWorkers = new List<BigInteger[]>();
+            educationWorkers.Add(seniorLectInfo);
+            educationWorkers.Add(regularLectsInfo);
+            educationWorkers.Add(juniorLectsInfo);
+
+            scienceWorkers = new List<BigInteger[]>();
+            scienceWorkers.Add(seniorSciInfo);
+            scienceWorkers.Add(regularSciInfo);
+            scienceWorkers.Add(juniorSciInfo);
+
+            grantWorkers = new List<BigInteger[]>();
+            grantWorkers.Add(seniorProfInfo);
+            grantWorkers.Add(regularProfInfo);
+            grantWorkers.Add(juniorProfInfo);
+
+            allWorkers = new List<List<BigInteger[]>>();
+            allWorkers.Add(educationWorkers);
+            allWorkers.Add(scienceWorkers);
+            allWorkers.Add(grantWorkers);
+
+            ResetCostsAndProduction();
+        }
+
+        //useful for when we change the settings:
+        public void ResetCostsAndProduction() {
+            allCosts = new List<Cost[]>();
+            Cost[] eduCosts = { new Cost(1000, 0, 0), new Cost(100, 0, 0), new Cost(10, 0, 0) };
+            Cost[] sciCosts = { new Cost(1000, 40, 0), new Cost(200, 20, 0), new Cost(100, 0, 0) };
+            Cost[] graCosts = { new Cost(2000, 500, 100), new Cost(400, 200, 10), new Cost(200, 100, 0) };
+            allCosts.Add(eduCosts);
+            allCosts.Add(sciCosts);
+            allCosts.Add(graCosts);
+
+            production[0] = 2;
+            production[1] = 2;
+            production[2] = 1;
         }
     }
 }

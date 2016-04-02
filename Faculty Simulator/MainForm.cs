@@ -14,9 +14,11 @@ namespace Faculty_Simulator {
         Faculty faculty;
         List<List<Button>> buyButtons;
         List<List<Button>> upgradeButtons;
-        List<ListView> listViews;
         List<GroupBox> groupBoxes;
         List<List<Label>> allLabels;
+        public List<ListView> listViews;
+
+        public List<long[]> clickCounts;
 
         private long secondsElapsed;
         private bool gameOn;
@@ -72,6 +74,12 @@ namespace Faculty_Simulator {
             scienceListView.ItemSelectionChanged += new ListViewItemSelectionChangedEventHandler(listView_SelectedIndexChanged);
             grantsListView.ItemSelectionChanged += new ListViewItemSelectionChangedEventHandler(listView_SelectedIndexChanged);
 
+            clickCounts = new List<long[]>();
+            for (int i = 0; i < listViews.Count; i++) {
+                long[] temp = { 0, 0, 0};
+                clickCounts.Add(temp);
+            }
+
             gameOn = false; //false until we start the game
         }
         private void BuyButtonClicked(object sender, EventArgs e) {
@@ -81,6 +89,8 @@ namespace Faculty_Simulator {
             int selectedItem = listViews[selectedTab].SelectedIndices[0];
             //make the purchase:
             if (faculty.Buy(selectedTab, selectedItem, (string)b.Tag)) MessageBox.Show("Well done, you've broke the game.");
+
+            clickCounts[selectedTab][selectedItem]++;
             UpdateGUI();
         }
         private void UpgradeButtonClicked(object sender, EventArgs e) {
@@ -90,6 +100,8 @@ namespace Faculty_Simulator {
             int selectedItem = listViews[selectedTab].SelectedIndices[0];
             //make the purchase:
             if (faculty.Upgrade(selectedTab, selectedItem, (string)b.Tag)) MessageBox.Show("Well done, you've broke the game.");
+
+            clickCounts[selectedTab][selectedItem]++;
             UpdateGUI();
         }
         private void SadButtonClicked(object sender, EventArgs e) {
@@ -101,6 +113,7 @@ namespace Faculty_Simulator {
                     return;
             }
             gameOn = true;
+            moreButton.Enabled = true;
             faculty = new Faculty("MiNI");
             UncoverGUI();
             secondsElapsed = 0;
@@ -319,6 +332,30 @@ namespace Faculty_Simulator {
         private void TryToExit(object sender, FormClosingEventArgs e) {
             if (MessageBox.Show("Are you sure you want to exit?", "WAIT!", MessageBoxButtons.YesNo) == DialogResult.No)
                 e.Cancel = true;
+        }
+
+        private void statisticsToolStripMenuItem_Click(object sender, EventArgs e) {
+            if (gameOn) {
+                StatisticsForm sf = new StatisticsForm(this);
+                timer.Stop();
+                sf.ShowDialog();
+                timer.Start();
+            }
+        }
+
+        private void optionToolStripMenuItem_Click(object sender, EventArgs e) {
+
+            OptionsForm of = new OptionsForm(this);
+            timer.Stop();
+            of.ShowDialog();
+            timer.Start();
+
+        }
+        public void UpdateFacultySettings(int newProductionMultiplier, int newPricesMultiplier) {
+            faculty.ResetCostsAndProduction();
+            faculty.UpdateProduction(newProductionMultiplier);
+            faculty.UpdatePrices(newPricesMultiplier);
+
         }
     }
 }

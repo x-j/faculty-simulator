@@ -30,31 +30,31 @@ namespace Faculty_Simulator {
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label label10;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "Senior lecturer",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "Lecturer",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "Junior Lecturer",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             "Senior Scientist",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
             "Scientist",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
             "Junior Scientist",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem25 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
             "Senior Professor",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
             "Professor",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
             "Junior Professor",
             "0"}, -1);
             this.statusStrip = new System.Windows.Forms.StatusStrip();
@@ -68,7 +68,7 @@ namespace Faculty_Simulator {
             this.saveGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.moreButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
@@ -79,6 +79,10 @@ namespace Faculty_Simulator {
             this.countHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.eduUpgradeButtonsPanel = new System.Windows.Forms.Panel();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
             this.upgradeCostLabel = new System.Windows.Forms.Label();
             this.upgradesCountLabel = new System.Windows.Forms.Label();
             this.eduBuyButtonsPanel = new System.Windows.Forms.Panel();
@@ -97,9 +101,17 @@ namespace Faculty_Simulator {
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.sciUpgradeButtonsPanel = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.sciBuyButtonsPanel = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -111,34 +123,22 @@ namespace Faculty_Simulator {
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.graUpgradeButtonsPanel = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button23 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.graBuyButtonsPanel = new System.Windows.Forms.Panel();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
             upgradesLabel = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
@@ -222,7 +222,7 @@ namespace Faculty_Simulator {
             // 
             // timerLabel
             // 
-            this.timerLabel.Margin = new System.Windows.Forms.Padding(0, 3, 400, 2);
+            this.timerLabel.Margin = new System.Windows.Forms.Padding(0, 3, 200, 2);
             this.timerLabel.Name = "timerLabel";
             this.timerLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.timerLabel.Size = new System.Drawing.Size(48, 17);
@@ -259,7 +259,7 @@ namespace Faculty_Simulator {
             // 
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripDropDownButton,
-            this.toolStripDropDownButton1});
+            this.moreButton});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(801, 25);
@@ -305,30 +305,32 @@ namespace Faculty_Simulator {
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // toolStripDropDownButton1
+            // moreButton
             // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.moreButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.moreButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.optionToolStripMenuItem,
             this.statisticsToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(48, 22);
-            this.toolStripDropDownButton1.Text = "More";
-            this.toolStripDropDownButton1.ToolTipText = "nice button";
+            this.moreButton.Enabled = false;
+            this.moreButton.Image = ((System.Drawing.Image)(resources.GetObject("moreButton.Image")));
+            this.moreButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.moreButton.Name = "moreButton";
+            this.moreButton.Size = new System.Drawing.Size(48, 22);
+            this.moreButton.Text = "More";
             // 
             // optionToolStripMenuItem
             // 
             this.optionToolStripMenuItem.Name = "optionToolStripMenuItem";
-            this.optionToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.optionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.optionToolStripMenuItem.Text = "Options";
+            this.optionToolStripMenuItem.Click += new System.EventHandler(this.optionToolStripMenuItem_Click);
             // 
             // statisticsToolStripMenuItem
             // 
             this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
-            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.statisticsToolStripMenuItem.Text = "Statistics";
+            this.statisticsToolStripMenuItem.Click += new System.EventHandler(this.statisticsToolStripMenuItem_Click);
             // 
             // tabControl
             // 
@@ -377,14 +379,14 @@ namespace Faculty_Simulator {
             this.educationListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.unitHeader,
             this.countHeader});
-            listViewItem19.StateImageIndex = 0;
-            listViewItem19.Tag = "0";
-            listViewItem20.Tag = "1";
-            listViewItem21.Tag = "2";
+            listViewItem1.StateImageIndex = 0;
+            listViewItem1.Tag = "0";
+            listViewItem2.Tag = "1";
+            listViewItem3.Tag = "2";
             this.educationListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem19,
-            listViewItem20,
-            listViewItem21});
+            listViewItem1,
+            listViewItem2,
+            listViewItem3});
             this.educationListView.Location = new System.Drawing.Point(3, 3);
             this.educationListView.MultiSelect = false;
             this.educationListView.Name = "educationListView";
@@ -434,6 +436,49 @@ namespace Faculty_Simulator {
             this.eduUpgradeButtonsPanel.Name = "eduUpgradeButtonsPanel";
             this.eduUpgradeButtonsPanel.Size = new System.Drawing.Size(515, 31);
             this.eduUpgradeButtonsPanel.TabIndex = 5;
+            // 
+            // button16
+            // 
+            this.button16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button16.Enabled = false;
+            this.button16.Location = new System.Drawing.Point(0, 0);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(515, 31);
+            this.button16.TabIndex = 5;
+            this.button16.Tag = "sad";
+            this.button16.Text = "Unable To Buy";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Visible = false;
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(307, 0);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(208, 31);
+            this.button17.TabIndex = 2;
+            this.button17.Tag = "2";
+            this.button17.Text = "Buy 1";
+            this.button17.UseVisualStyleBackColor = true;
+            // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(116, 0);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(179, 31);
+            this.button18.TabIndex = 3;
+            this.button18.Tag = "1";
+            this.button18.Text = "Buy 1";
+            this.button18.UseVisualStyleBackColor = true;
+            // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(0, 0);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(110, 31);
+            this.button19.TabIndex = 4;
+            this.button19.Tag = "0";
+            this.button19.Text = "Buy 1";
+            this.button19.UseVisualStyleBackColor = true;
             // 
             // upgradeCostLabel
             // 
@@ -583,13 +628,13 @@ namespace Faculty_Simulator {
             this.scienceListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
-            listViewItem22.Tag = "0";
-            listViewItem23.Tag = "1";
-            listViewItem24.Tag = "2";
+            listViewItem4.Tag = "0";
+            listViewItem5.Tag = "1";
+            listViewItem6.Tag = "2";
             this.scienceListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem22,
-            listViewItem23,
-            listViewItem24});
+            listViewItem4,
+            listViewItem5,
+            listViewItem6});
             this.scienceListView.Location = new System.Drawing.Point(3, 3);
             this.scienceListView.MultiSelect = false;
             this.scienceListView.Name = "scienceListView";
@@ -640,6 +685,49 @@ namespace Faculty_Simulator {
             this.sciUpgradeButtonsPanel.Size = new System.Drawing.Size(515, 31);
             this.sciUpgradeButtonsPanel.TabIndex = 5;
             // 
+            // button4
+            // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button4.Enabled = false;
+            this.button4.Location = new System.Drawing.Point(0, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(515, 31);
+            this.button4.TabIndex = 5;
+            this.button4.Tag = "sad";
+            this.button4.Text = "Unable To Buy";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Visible = false;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(307, 0);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(208, 31);
+            this.button5.TabIndex = 2;
+            this.button5.Tag = "2";
+            this.button5.Text = "Buy 1";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(116, 0);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(179, 31);
+            this.button6.TabIndex = 3;
+            this.button6.Tag = "1";
+            this.button6.Text = "Buy 1";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(0, 0);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(110, 31);
+            this.button21.TabIndex = 4;
+            this.button21.Tag = "0";
+            this.button21.Text = "Buy 1";
+            this.button21.UseVisualStyleBackColor = true;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -670,6 +758,49 @@ namespace Faculty_Simulator {
             this.sciBuyButtonsPanel.Name = "sciBuyButtonsPanel";
             this.sciBuyButtonsPanel.Size = new System.Drawing.Size(515, 31);
             this.sciBuyButtonsPanel.TabIndex = 1;
+            // 
+            // button7
+            // 
+            this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button7.Enabled = false;
+            this.button7.Location = new System.Drawing.Point(0, 0);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(515, 31);
+            this.button7.TabIndex = 5;
+            this.button7.Tag = "sad";
+            this.button7.Text = "Unable To Buy";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Visible = false;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(307, 0);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(208, 31);
+            this.button8.TabIndex = 2;
+            this.button8.Tag = "2";
+            this.button8.Text = "Buy 1";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(116, 0);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(179, 31);
+            this.button9.TabIndex = 3;
+            this.button9.Tag = "1";
+            this.button9.Text = "Buy 1";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(0, 0);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(110, 31);
+            this.button20.TabIndex = 4;
+            this.button20.Tag = "0";
+            this.button20.Text = "Buy 1";
+            this.button20.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -745,13 +876,13 @@ namespace Faculty_Simulator {
             this.grantsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader3,
             this.columnHeader4});
-            listViewItem25.Tag = "0";
-            listViewItem26.Tag = "1";
-            listViewItem27.Tag = "2";
+            listViewItem7.Tag = "0";
+            listViewItem8.Tag = "1";
+            listViewItem9.Tag = "2";
             this.grantsListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem25,
-            listViewItem26,
-            listViewItem27});
+            listViewItem7,
+            listViewItem8,
+            listViewItem9});
             this.grantsListView.Location = new System.Drawing.Point(3, 3);
             this.grantsListView.MultiSelect = false;
             this.grantsListView.Name = "grantsListView";
@@ -802,6 +933,49 @@ namespace Faculty_Simulator {
             this.graUpgradeButtonsPanel.Size = new System.Drawing.Size(515, 31);
             this.graUpgradeButtonsPanel.TabIndex = 5;
             // 
+            // button10
+            // 
+            this.button10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button10.Enabled = false;
+            this.button10.Location = new System.Drawing.Point(0, 0);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(515, 31);
+            this.button10.TabIndex = 5;
+            this.button10.Tag = "sad";
+            this.button10.Text = "Unable To Buy";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Visible = false;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(307, 0);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(208, 31);
+            this.button11.TabIndex = 2;
+            this.button11.Tag = "2";
+            this.button11.Text = "Buy 1";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(116, 0);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(179, 31);
+            this.button12.TabIndex = 3;
+            this.button12.Tag = "1";
+            this.button12.Text = "Buy 1";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(0, 0);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(110, 31);
+            this.button23.TabIndex = 4;
+            this.button23.Tag = "0";
+            this.button23.Text = "Buy 1";
+            this.button23.UseVisualStyleBackColor = true;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -832,6 +1006,49 @@ namespace Faculty_Simulator {
             this.graBuyButtonsPanel.Name = "graBuyButtonsPanel";
             this.graBuyButtonsPanel.Size = new System.Drawing.Size(515, 31);
             this.graBuyButtonsPanel.TabIndex = 1;
+            // 
+            // button13
+            // 
+            this.button13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button13.Enabled = false;
+            this.button13.Location = new System.Drawing.Point(0, 0);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(515, 31);
+            this.button13.TabIndex = 5;
+            this.button13.Tag = "sad";
+            this.button13.Text = "Unable To Buy";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Visible = false;
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(307, 0);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(208, 31);
+            this.button14.TabIndex = 2;
+            this.button14.Tag = "2";
+            this.button14.Text = "Buy 1";
+            this.button14.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(116, 0);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(179, 31);
+            this.button15.TabIndex = 3;
+            this.button15.Tag = "1";
+            this.button15.Text = "Buy 1";
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(0, 0);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(110, 31);
+            this.button22.TabIndex = 4;
+            this.button22.Tag = "0";
+            this.button22.Text = "Buy 1";
+            this.button22.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -877,221 +1094,6 @@ namespace Faculty_Simulator {
             // 
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // button16
-            // 
-            this.button16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button16.Enabled = false;
-            this.button16.Location = new System.Drawing.Point(0, 0);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(515, 31);
-            this.button16.TabIndex = 5;
-            this.button16.Tag = "sad";
-            this.button16.Text = "Unable To Buy";
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Visible = false;
-            // 
-            // button17
-            // 
-            this.button17.Location = new System.Drawing.Point(307, 0);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(208, 31);
-            this.button17.TabIndex = 2;
-            this.button17.Tag = "2";
-            this.button17.Text = "Buy 1";
-            this.button17.UseVisualStyleBackColor = true;
-            // 
-            // button18
-            // 
-            this.button18.Location = new System.Drawing.Point(116, 0);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(179, 31);
-            this.button18.TabIndex = 3;
-            this.button18.Tag = "1";
-            this.button18.Text = "Buy 1";
-            this.button18.UseVisualStyleBackColor = true;
-            // 
-            // button19
-            // 
-            this.button19.Location = new System.Drawing.Point(0, 0);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(110, 31);
-            this.button19.TabIndex = 4;
-            this.button19.Tag = "0";
-            this.button19.Text = "Buy 1";
-            this.button19.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button7.Enabled = false;
-            this.button7.Location = new System.Drawing.Point(0, 0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(515, 31);
-            this.button7.TabIndex = 5;
-            this.button7.Tag = "sad";
-            this.button7.Text = "Unable To Buy";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Visible = false;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(307, 0);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(208, 31);
-            this.button8.TabIndex = 2;
-            this.button8.Tag = "2";
-            this.button8.Text = "Buy 1";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(116, 0);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(179, 31);
-            this.button9.TabIndex = 3;
-            this.button9.Tag = "1";
-            this.button9.Text = "Buy 1";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button20
-            // 
-            this.button20.Location = new System.Drawing.Point(0, 0);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(110, 31);
-            this.button20.TabIndex = 4;
-            this.button20.Tag = "0";
-            this.button20.Text = "Buy 1";
-            this.button20.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(0, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(515, 31);
-            this.button4.TabIndex = 5;
-            this.button4.Tag = "sad";
-            this.button4.Text = "Unable To Buy";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Visible = false;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(307, 0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(208, 31);
-            this.button5.TabIndex = 2;
-            this.button5.Tag = "2";
-            this.button5.Text = "Buy 1";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(116, 0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(179, 31);
-            this.button6.TabIndex = 3;
-            this.button6.Tag = "1";
-            this.button6.Text = "Buy 1";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button21
-            // 
-            this.button21.Location = new System.Drawing.Point(0, 0);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(110, 31);
-            this.button21.TabIndex = 4;
-            this.button21.Tag = "0";
-            this.button21.Text = "Buy 1";
-            this.button21.UseVisualStyleBackColor = true;
-            // 
-            // button13
-            // 
-            this.button13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button13.Enabled = false;
-            this.button13.Location = new System.Drawing.Point(0, 0);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(515, 31);
-            this.button13.TabIndex = 5;
-            this.button13.Tag = "sad";
-            this.button13.Text = "Unable To Buy";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Visible = false;
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(307, 0);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(208, 31);
-            this.button14.TabIndex = 2;
-            this.button14.Tag = "2";
-            this.button14.Text = "Buy 1";
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(116, 0);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(179, 31);
-            this.button15.TabIndex = 3;
-            this.button15.Tag = "1";
-            this.button15.Text = "Buy 1";
-            this.button15.UseVisualStyleBackColor = true;
-            // 
-            // button22
-            // 
-            this.button22.Location = new System.Drawing.Point(0, 0);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(110, 31);
-            this.button22.TabIndex = 4;
-            this.button22.Tag = "0";
-            this.button22.Text = "Buy 1";
-            this.button22.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button10.Enabled = false;
-            this.button10.Location = new System.Drawing.Point(0, 0);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(515, 31);
-            this.button10.TabIndex = 5;
-            this.button10.Tag = "sad";
-            this.button10.Text = "Unable To Buy";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Visible = false;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(307, 0);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(208, 31);
-            this.button11.TabIndex = 2;
-            this.button11.Tag = "2";
-            this.button11.Text = "Buy 1";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(116, 0);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(179, 31);
-            this.button12.TabIndex = 3;
-            this.button12.Tag = "1";
-            this.button12.Text = "Buy 1";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button23
-            // 
-            this.button23.Location = new System.Drawing.Point(0, 0);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(110, 31);
-            this.button23.TabIndex = 4;
-            this.button23.Tag = "0";
-            this.button23.Text = "Buy 1";
-            this.button23.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -1164,7 +1166,7 @@ namespace Faculty_Simulator {
         private System.Windows.Forms.ToolStripMenuItem saveGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripDropDownButton moreButton;
         private System.Windows.Forms.ToolStripStatusLabel timerLabel;
         private System.Windows.Forms.ToolStripStatusLabel grantsCounter;
         private System.Windows.Forms.ToolStripStatusLabel scienceCounter;
