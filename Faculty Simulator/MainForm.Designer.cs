@@ -30,31 +30,31 @@ namespace Faculty_Simulator {
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label label10;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
             "Senior lecturer",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
             "Lecturer",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem(new string[] {
             "Junior Lecturer",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem(new string[] {
             "Senior Scientist",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(new string[] {
             "Scientist",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
             "Junior Scientist",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
             "Senior Professor",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem(new string[] {
             "Professor",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem(new string[] {
             "Junior Professor",
             "0"}, -1);
             this.statusStrip = new System.Windows.Forms.StatusStrip();
@@ -384,14 +384,14 @@ namespace Faculty_Simulator {
             this.educationListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.unitHeader,
             this.countHeader});
-            listViewItem1.StateImageIndex = 0;
-            listViewItem1.Tag = "0";
-            listViewItem2.Tag = "1";
-            listViewItem3.Tag = "2";
+            listViewItem10.StateImageIndex = 0;
+            listViewItem10.Tag = "0";
+            listViewItem11.Tag = "1";
+            listViewItem12.Tag = "2";
             this.educationListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3});
+            listViewItem10,
+            listViewItem11,
+            listViewItem12});
             this.educationListView.Location = new System.Drawing.Point(3, 3);
             this.educationListView.MultiSelect = false;
             this.educationListView.Name = "educationListView";
@@ -633,13 +633,13 @@ namespace Faculty_Simulator {
             this.scienceListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
-            listViewItem4.Tag = "0";
-            listViewItem5.Tag = "1";
-            listViewItem6.Tag = "2";
+            listViewItem13.Tag = "0";
+            listViewItem14.Tag = "1";
+            listViewItem15.Tag = "2";
             this.scienceListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem4,
-            listViewItem5,
-            listViewItem6});
+            listViewItem13,
+            listViewItem14,
+            listViewItem15});
             this.scienceListView.Location = new System.Drawing.Point(3, 3);
             this.scienceListView.MultiSelect = false;
             this.scienceListView.Name = "scienceListView";
@@ -881,13 +881,13 @@ namespace Faculty_Simulator {
             this.grantsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader3,
             this.columnHeader4});
-            listViewItem7.Tag = "0";
-            listViewItem8.Tag = "1";
-            listViewItem9.Tag = "2";
+            listViewItem16.Tag = "0";
+            listViewItem17.Tag = "1";
+            listViewItem18.Tag = "2";
             this.grantsListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem7,
-            listViewItem8,
-            listViewItem9});
+            listViewItem16,
+            listViewItem17,
+            listViewItem18});
             this.grantsListView.Location = new System.Drawing.Point(3, 3);
             this.grantsListView.MultiSelect = false;
             this.grantsListView.Name = "grantsListView";
