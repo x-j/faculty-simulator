@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Faculty_Simulator {
 
-    class Faculty {
+    public class Faculty {
 
         private static BigInteger STARTING_EDUCATION = 50;
 
@@ -39,11 +39,18 @@ namespace Faculty_Simulator {
         public BigInteger[] regularProfInfo = { 0, 0 };
         public BigInteger[] juniorProfInfo = { 0, 0 };
 
+        //upgrade costs are the same everywhere, fortunately:
+        public BigInteger[] upgradeCosts = { 10000, 1000, 100 };
         public class Cost {
             public BigInteger educations;
             public BigInteger sciences;
             public BigInteger grants;
 
+            public Cost() {
+                educations = 0;
+                sciences = 0;
+                grants = 0;
+            }
             public Cost(BigInteger e, BigInteger s, BigInteger g) {
                 educations = e;
                 sciences = s;
@@ -54,6 +61,12 @@ namespace Faculty_Simulator {
                 educations = cost.educations;
                 sciences = cost.sciences;
                 grants = cost.grants;
+            }
+
+            public Cost(SerializableFaculty.Cost sfc) {
+                educations = BigInteger.Parse(sfc.educations);
+                sciences = BigInteger.Parse(sfc.sciences);
+                grants = BigInteger.Parse(sfc.grants);
             }
 
             public static Cost Multiply(int scalar, Cost cost) {
@@ -68,30 +81,56 @@ namespace Faculty_Simulator {
 
         public List<Cost[]> allCosts;
 
-        //upgrade costs are the same everywhere, fortunately:
-        public BigInteger[] upgradeCosts = { 10000, 1000, 100 };
-
-        public Faculty(string v) {
-            Name = v;
+        public Faculty() {
             PrepareForWork();
+        }
+
+        public Faculty(SerializableFaculty sf) {
+
+            totalEducation = BigInteger.Parse(sf.totalEducation);
+            totalScience = BigInteger.Parse(sf.totalScience);
+            totalGrants = BigInteger.Parse(sf.totalGrants);
+
+            production = sf.production;
+
+            for (int i = 0; i < sf.upgradeCosts.Length; i++)
+                upgradeCosts[i] = BigInteger.Parse(sf.upgradeCosts[i]);
+
+            allWorkers = new List<List<BigInteger[]>>();
+            for (int i = 0; i < sf.allWorkers.Count; i++) {
+                allWorkers.Add(new List<BigInteger[]>());
+                for (int j = 0; j < sf.allWorkers[i].Count; j++) {
+                    BigInteger[] temp = new BigInteger[2];
+                    temp[0] = BigInteger.Parse(sf.allWorkers[i][j][0]);
+                    temp[1] = BigInteger.Parse(sf.allWorkers[i][j][1]);
+                    allWorkers[i].Add(temp);
+                }
+            }
+
+            allCosts = new List<Cost[]>();
+            for (int i = 0; i < sf.allCosts.Count; i++) {
+                allCosts.Add(new Cost[sf.allCosts[i].Length]);
+                for (int j = 0; j < sf.allCosts[i].Length; j++)
+                    allCosts[i][j] = new Cost(sf.allCosts[i][j]);
+            }
+
         }
 
         public void Increment() {
 
-            //hire new staff:
-            regularLectsInfo[0] += seniorLectInfo[0] * production[0] * (seniorLectInfo[1] + 1);
-            juniorLectsInfo[0] += regularLectsInfo[0] * production[1] * (regularLectsInfo[1] + 1);
-
-            regularSciInfo[0] += seniorSciInfo[0] * production[0] * (seniorSciInfo[1] + 1);
-            juniorSciInfo[0] += regularSciInfo[0] * production[1] * (regularSciInfo[1] + 1);
-
-            regularProfInfo[0] += seniorProfInfo[0] * production[0] * (seniorProfInfo[1] + 1);
-            juniorProfInfo[0] += regularProfInfo[0] * production[1] * (regularProfInfo[1] + 1);
-
+            for (int i = 0; i < allWorkers.Count; i++) {
+                var seniorWorkers = allWorkers[i][0];
+                var regularWorkers = allWorkers[i][1];
+                var juniorWorkers = allWorkers[i][2];
+                //hire new staff:
+                regularWorkers[0] += seniorWorkers[0] * production[0] * (1 + seniorWorkers[1]);
+                juniorWorkers[0] += regularWorkers[0] * production[1] * (1 + regularWorkers[1]);
+            }
+            
             //gather the edu, sci and gra:
-            totalEducation += juniorLectsInfo[0] * production[2] * (juniorLectsInfo[1] + 1);
-            totalScience += juniorSciInfo[0] * production[2] * (juniorSciInfo[1] + 1);
-            totalGrants += juniorProfInfo[0] * production[2] * (juniorProfInfo[1] + 1);
+            totalEducation += allWorkers[0][2][0] * production[2] * (allWorkers[0][2][1] + 1);
+            totalScience += allWorkers[1][2][0] * production[2] * (allWorkers[1][2][1] + 1);
+            totalGrants += allWorkers[2][2][0] * production[2] * (allWorkers[2][2][1] + 1);
 
         }
         public bool CanAfford(Cost cost) {

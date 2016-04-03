@@ -139,6 +139,8 @@ namespace Faculty_Simulator {
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.saveFileDialogBox = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialogBox = new System.Windows.Forms.OpenFileDialog();
             upgradesLabel = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
@@ -282,26 +284,29 @@ namespace Faculty_Simulator {
             // startGameButton
             // 
             this.startGameButton.Name = "startGameButton";
-            this.startGameButton.Size = new System.Drawing.Size(134, 22);
+            this.startGameButton.Size = new System.Drawing.Size(152, 22);
             this.startGameButton.Text = "Start Game";
             this.startGameButton.Click += new System.EventHandler(this.startGameButton_Click);
             // 
             // saveGameToolStripMenuItem
             // 
+            this.saveGameToolStripMenuItem.Enabled = false;
             this.saveGameToolStripMenuItem.Name = "saveGameToolStripMenuItem";
-            this.saveGameToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.saveGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveGameToolStripMenuItem.Text = "Save Game";
+            this.saveGameToolStripMenuItem.Click += new System.EventHandler(this.saveGameToolStripMenuItem_Click);
             // 
             // loadGameToolStripMenuItem
             // 
             this.loadGameToolStripMenuItem.Name = "loadGameToolStripMenuItem";
-            this.loadGameToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.loadGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.loadGameToolStripMenuItem.Text = "Load Game";
+            this.loadGameToolStripMenuItem.Click += new System.EventHandler(this.loadGameToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -321,14 +326,14 @@ namespace Faculty_Simulator {
             // optionToolStripMenuItem
             // 
             this.optionToolStripMenuItem.Name = "optionToolStripMenuItem";
-            this.optionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.optionToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.optionToolStripMenuItem.Text = "Options";
             this.optionToolStripMenuItem.Click += new System.EventHandler(this.optionToolStripMenuItem_Click);
             // 
             // statisticsToolStripMenuItem
             // 
             this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
-            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.statisticsToolStripMenuItem.Text = "Statistics";
             this.statisticsToolStripMenuItem.Click += new System.EventHandler(this.statisticsToolStripMenuItem_Click);
             // 
@@ -1095,6 +1100,18 @@ namespace Faculty_Simulator {
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // saveFileDialogBox
+            // 
+            this.saveFileDialogBox.DefaultExt = "xml";
+            this.saveFileDialogBox.Filter = "XML files | *.xml";
+            this.saveFileDialogBox.Title = "Choose Save File";
+            // 
+            // openFileDialogBox
+            // 
+            this.openFileDialogBox.DefaultExt = "xml";
+            this.openFileDialogBox.Filter = "XML files | *.xml";
+            this.openFileDialogBox.Title = "Choose a save game";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1231,6 +1248,8 @@ namespace Faculty_Simulator {
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.SaveFileDialog saveFileDialogBox;
+        private System.Windows.Forms.OpenFileDialog openFileDialogBox;
     }
 }
 

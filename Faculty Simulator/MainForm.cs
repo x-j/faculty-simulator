@@ -7,6 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Serialization;
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json;
+
 
 namespace Faculty_Simulator {
     public partial class MainForm : Form {
@@ -20,8 +25,11 @@ namespace Faculty_Simulator {
 
         public List<long[]> clickCounts;
 
-        private long secondsElapsed;
+        private double secondsElapsed;
         private bool gameOn;
+        public int PricesMultiplier { get; set; }
+        public int ProductionMultiplier { get; set; }
+        public int SpeedMultiplier { get; set; }
 
         public MainForm() {
             InitializeComponent();
@@ -76,9 +84,15 @@ namespace Faculty_Simulator {
 
             clickCounts = new List<long[]>();
             for (int i = 0; i < listViews.Count; i++) {
-                long[] temp = { 0, 0, 0};
+                long[] temp = { 0, 0, 0 };
                 clickCounts.Add(temp);
             }
+            saveFileDialogBox.InitialDirectory = Application.StartupPath;
+            openFileDialogBox.InitialDirectory = Application.StartupPath;
+
+            PricesMultiplier = 1;
+            ProductionMultiplier = 1;
+            SpeedMultiplier = 1;
 
             gameOn = false; //false until we start the game
         }
@@ -112,23 +126,22 @@ namespace Faculty_Simulator {
                 if ((MessageBox.Show("Are you sure you want to start the game again? You will lose all unsaved progress!", "WAIT!", MessageBoxButtons.YesNo) == DialogResult.No))
                     return;
             }
-            gameOn = true;
-            moreButton.Enabled = true;
-            faculty = new Faculty("MiNI");
-            UncoverGUI();
+            faculty = new Faculty();
             secondsElapsed = 0;
-            timer.Enabled = true;
-            foreach (Component c in statusStrip.Items) ((ToolStripStatusLabel)c).Visible = true;
-
+            PrepareTheGame();
         }
 
-        private void UncoverGUI() {
+        private void PrepareTheGame() {
+            gameOn = true;
+            moreButton.Enabled = true;
+            saveGameToolStripMenuItem.Enabled = true;
             tabControl.Visible = true;
-            //possibly something else happens here? if not, get rid of this method
+            timer.Start();
+            foreach (Component c in statusStrip.Items) ((ToolStripStatusLabel)c).Visible = true;
         }
 
         private void timer_Tick(object sender, EventArgs e) {
-            secondsElapsed++;
+            secondsElapsed += (double)1 / SpeedMultiplier;
             faculty.Increment();
             UpdateGUI();
             if (secondsElapsed == 120) MessageBox.Show("You've been playing for two minutes already. I would stop if I were you, you're being very unproductive.");
@@ -148,7 +161,7 @@ namespace Faculty_Simulator {
         private void UpdateGUI() {
 
             //update the label indicating the time elapsed
-            timerLabel.Text = TimeSpan.FromSeconds(secondsElapsed).ToString();
+            timerLabel.Text = (TimeSpan.FromSeconds((int)secondsElapsed)).ToString();
 
             //update the labels which store our resources:
             educationCounter.Text = "EDUCATION: " + faculty.totalEducation;
@@ -351,11 +364,52 @@ namespace Faculty_Simulator {
             timer.Start();
 
         }
-        public void UpdateFacultySettings(int newProductionMultiplier, int newPricesMultiplier) {
+        public void UpdateFacultySettings(int newProductionMultiplier, int newPricesMultiplier, int newSpeedMultiplier) {
+            this.ProductionMultiplier = newProductionMultiplier;
+            this.PricesMultiplier = newPricesMultiplier;
+            this.SpeedMultiplier = newSpeedMultiplier;
+
             faculty.ResetCostsAndProduction();
             faculty.UpdateProduction(newProductionMultiplier);
             faculty.UpdatePrices(newPricesMultiplier);
 
+            timer.Interval = 1000 / SpeedMultiplier;
+
         }
+
+        private void saveGameToolStripMenuItem_Click(object sender, EventArgs e) {
+            timer.Stop();
+            if (saveFileDialogBox.ShowDialog() == DialogResult.OK) {
+                string fileName = saveFileDialogBox.FileName;
+                var serializer = new XmlSerializer(typeof(SerializableFaculty));
+                var file = System.IO.File.Create(fileName);
+                var sf = new SerializableFaculty(faculty, secondsElapsed, ProductionMultiplier, PricesMultiplier, SpeedMultiplier);
+                serializer.Serialize(file, sf);
+            }
+            timer.Start();
+        }
+
+        private void loadGameToolStripMenuItem_Click(object sender, EventArgs e) {
+            if (gameOn) {
+                if (MessageBox.Show("Are you sure you want to load a different game? You will lose all your unsaved progress!", "WAIT!", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+            }
+            timer.Stop();
+            if (openFileDialogBox.ShowDialog() == DialogResult.OK) {
+                string fileName = openFileDialogBox.FileName;
+                var serializer = new XmlSerializer(typeof(SerializableFaculty));
+                var file = System.IO.File.Open(fileName, System.IO.FileMode.Open);
+                var sf = (SerializableFaculty)serializer.Deserialize(file);
+                secondsElapsed = sf.SecondsElapsed;
+                ProductionMultiplier = sf.ProductionMultiplier;
+                PricesMultiplier = sf.PricesMultiplier;
+                SpeedMultiplier = sf.SpeedMultiplier;
+                faculty = new Faculty(sf);
+                PrepareTheGame();
+            }
+            timer.Start();
+        }
+
+
     }
 }

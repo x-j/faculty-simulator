@@ -14,12 +14,15 @@ namespace Faculty_Simulator {
         MainForm mainForm;
         public OptionsForm(MainForm mf) {
             InitializeComponent();
-            this.FormClosing+=new FormClosingEventHandler(SendNewSettings);
+            productionTrackBar.Value = mf.ProductionMultiplier;
+            pricesTrackBar.Value = mf.PricesMultiplier;
+            speedTrackBar.Value = mf.SpeedMultiplier;
+            okButton.Click += new EventHandler(SendNewSettings);
             mainForm = mf;
         }
 
-        private void SendNewSettings(object sender, FormClosingEventArgs e) {
-            mainForm.UpdateFacultySettings(productionTrackBar.Value, pricesTrackBar.Value);
+        private void SendNewSettings(object sender, EventArgs e) {
+            mainForm.UpdateFacultySettings(productionTrackBar.Value, pricesTrackBar.Value, speedTrackBar.Value);
         }
 
     }

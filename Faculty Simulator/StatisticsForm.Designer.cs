@@ -26,6 +26,7 @@
             this.listView = new System.Windows.Forms.ListView();
             this.unitHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonClickCountHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.closeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView
@@ -51,10 +52,22 @@
             this.buttonClickCountHeader.Text = "Button clicks";
             this.buttonClickCountHeader.Width = 157;
             // 
+            // closeButton
+            // 
+            this.closeButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.closeButton.Location = new System.Drawing.Point(101, 219);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(81, 28);
+            this.closeButton.TabIndex = 1;
+            this.closeButton.Text = "Close";
+            this.closeButton.UseVisualStyleBackColor = true;
+            // 
             // StatisticsForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.CancelButton = this.closeButton;
+            this.ClientSize = new System.Drawing.Size(284, 259);
+            this.Controls.Add(this.closeButton);
             this.Controls.Add(this.listView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "StatisticsForm";
@@ -68,5 +81,6 @@
         private System.Windows.Forms.ListView listView;
         private System.Windows.Forms.ColumnHeader unitHeader;
         private System.Windows.Forms.ColumnHeader buttonClickCountHeader;
+        private System.Windows.Forms.Button closeButton;
     }
 }
